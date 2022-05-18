@@ -25,16 +25,29 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// redirect login awal, ini nanti di ganti jadi halaman landing page
+// Route::get('/', function () {
+//     return view('auth/login');
+// });
+
+// buka web langsung ke landingpage
 Route::get('/', function () {
+    return view('menu.main-menu.index');
+});
+
+// login nya (for some reason ndak mau ngambil /login, nanti error, tapi anything yang bukan /login bisa)
+Route::get('/memberlogin', function() {
     return view('auth/login');
 });
 
+// autentikasi, jangan disentuh
 Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('/dashboard', function () {
         return view('home', ['users' => User::get(),]);
     });
-    //user list
 
+
+    //user list
     Route::prefix('user-management')->group(function () {
         Route::resource('user', UserController::class);
         Route::post('import', [UserController::class, 'import'])->name('user.import');
