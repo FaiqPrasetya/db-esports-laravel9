@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             MenuItemSeeder::class,
             CategorySeeder::class,
             AgentSeeder::class,
+            MapSeeder::class,
         ]);
     }
 }

@@ -18,72 +18,72 @@ class AgentSeeder extends Seeder
         Agents::insert(
             [
                 [
-                    'name' => 'Brimstone',
-                    'type' => 'Controller',
+                    'agent_name' => 'Brimstone',
+                    'agent_type' => 'Controller',
                 ],
                 [
-                    'name' => 'Viper',
-                    'type' => 'Controller',
+                    'agent_name' => 'Viper',
+                    'agent_type' => 'Controller',
                 ],
                 [
-                    'name' => 'Omen',
-                    'type' => 'Controller',
+                    'agent_name' => 'Omen',
+                    'agent_type' => 'Controller',
                 ],
                 [
-                    'name' => 'Astra',
-                    'type' => 'Controller',
+                    'agent_name' => 'Astra',
+                    'agent_type' => 'Controller',
                 ],
                 [
-                    'name' => 'Killjoy',
-                    'type' => 'Sentinel',
+                    'agent_name' => 'Killjoy',
+                    'agent_type' => 'Sentinel',
                 ],
                 [
-                    'name' => 'Cypher',
-                    'type' => 'Sentinel',
+                    'agent_name' => 'Cypher',
+                    'agent_type' => 'Sentinel',
                 ],
                 [
-                    'name' => 'Sage',
-                    'type' => 'Sentinel',
+                    'agent_name' => 'Sage',
+                    'agent_type' => 'Sentinel',
                 ],
                 [
-                    'name' => 'Chamber',
-                    'type' => 'Sentinel',
+                    'agent_name' => 'Chamber',
+                    'agent_type' => 'Sentinel',
                 ],
                 [
-                    'name' => 'Phoenix',
-                    'type' => 'Duelist',
+                    'agent_name' => 'Phoenix',
+                    'agent_type' => 'Duelist',
                 ],
                 [
-                    'name' => 'Jett',
-                    'type' => 'Duelist',
+                    'agent_name' => 'Jett',
+                    'agent_type' => 'Duelist',
                 ],
                 [
-                    'name' => 'Reyna',
-                    'type' => 'Duelist',
+                    'agent_name' => 'Reyna',
+                    'agent_type' => 'Duelist',
                 ],
                 [
-                    'name' => 'Raze',
-                    'type' => 'Duelist',
+                    'agent_name' => 'Raze',
+                    'agent_type' => 'Duelist',
                 ],
                 [
-                    'name' => 'Yoru',
-                    'type' => 'Duelist',
+                    'agent_name' => 'Yoru',
+                    'agent_type' => 'Duelist',
                 ],
                 [
-                    'name' => 'Sova',
-                    'type' => 'Initiator',
+                    'agent_name' => 'Sova',
+                    'agent_type' => 'Initiator',
                 ],
                 [
-                    'name' => 'Skye',
-                    'type' => 'Initiator',
+                    'agent_name' => 'Skye',
+                    'agent_type' => 'Initiator',
                 ],
                 [
-                    'name' => 'KAY/O',
-                    'type' => 'Initiator',
+                    'agent_name' => 'KAY/O',
+                    'agent_type' => 'Initiator',
                 ],
                 [
-                    'name' => 'Fade',
-                    'type' => 'Initiator',
+                    'agent_name' => 'Fade',
+                    'agent_type' => 'Initiator',
                 ],
             ]
         );

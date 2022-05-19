@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agents extends Model
+class Maps extends Model
 {
     use HasFactory;
-    protected $fillable = ['agent_name', 'agent_type'];
+    protected $fillable = ['map_name', 'map_file'];
 }
