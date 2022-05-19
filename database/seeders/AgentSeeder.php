@@ -22,8 +22,69 @@ class AgentSeeder extends Seeder
                     'type' => 'Controller',
                 ],
                 [
-
-                ]
+                    'name' => 'Viper',
+                    'type' => 'Controller',
+                ],
+                [
+                    'name' => 'Omen',
+                    'type' => 'Controller',
+                ],
+                [
+                    'name' => 'Astra',
+                    'type' => 'Controller',
+                ],
+                [
+                    'name' => 'Killjoy',
+                    'type' => 'Sentinel',
+                ],
+                [
+                    'name' => 'Cypher',
+                    'type' => 'Sentinel',
+                ],
+                [
+                    'name' => 'Sage',
+                    'type' => 'Sentinel',
+                ],
+                [
+                    'name' => 'Chamber',
+                    'type' => 'Sentinel',
+                ],
+                [
+                    'name' => 'Phoenix',
+                    'type' => 'Duelist',
+                ],
+                [
+                    'name' => 'Jett',
+                    'type' => 'Duelist',
+                ],
+                [
+                    'name' => 'Reyna',
+                    'type' => 'Duelist',
+                ],
+                [
+                    'name' => 'Raze',
+                    'type' => 'Duelist',
+                ],
+                [
+                    'name' => 'Yoru',
+                    'type' => 'Duelist',
+                ],
+                [
+                    'name' => 'Sova',
+                    'type' => 'Initiator',
+                ],
+                [
+                    'name' => 'Skye',
+                    'type' => 'Initiator',
+                ],
+                [
+                    'name' => 'KAY/O',
+                    'type' => 'Initiator',
+                ],
+                [
+                    'name' => 'Fade',
+                    'type' => 'Initiator',
+                ],
             ]
         );
     }
