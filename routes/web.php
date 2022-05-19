@@ -30,6 +30,11 @@ use App\Http\Controllers\UserController;
 //     return view('auth/login');
 // });
 
+// Strats
+Route::get('/strats', function() {
+    return view('strats.index');
+});
+
 // buka web langsung ke landingpage
 Route::get('/', function () {
     return view('menu.main-menu.index');
