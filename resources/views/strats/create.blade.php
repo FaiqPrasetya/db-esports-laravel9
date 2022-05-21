@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <section class="section">
         <div class="section-header">
             <h1>Table</h1>
@@ -27,7 +26,7 @@
                             <select name="map_name" class="form-control select2-dropdown">
                                 <option value="">Map Select</option>
                                 @foreach ($maps as $item)
-                                    <option value="{{ $item->id }}">{{ $item->map_name}}</option>
+                                    <option value="{{ $item->id }}">{{ $item->map_name }}</option>
                                 @endforeach
                             </select>
                             @error('map_name')
@@ -38,7 +37,8 @@
                         {{-- Strats image upload --}}
                         <div class="form-group">
                             <label for="strats_image">Strats Image Upload</label>
-                            <input type="file" name="strats_image" class="file-control" @error('strats_image')@enderror id="strats_image">
+                            <input type="file" name="strats_image" class="file-control" @error('strats_image')  @enderror
+                                id="strats_image">
                             @error('strats_image')
                                 {{ $message }}
                             @enderror
@@ -47,8 +47,9 @@
                         {{-- Strats Name --}}
                         <div class="form-group">
                             <label for="strats_name">Strats Name</label>
-                            <input type="text" class="form-control @error('strats_name') is-invalid @enderror" id="strats_name"
-                                name="strats_name" placeholder="Enter Strats Name" value="{{ old('strats_name') }}">
+                            <input type="text" class="form-control @error('strats_name') is-invalid @enderror"
+                                id="strats_name" name="strats_name" placeholder="Enter Strats Name"
+                                value="{{ old('strats_name') }}">
                             @error('strats_name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -56,16 +57,13 @@
                             @enderror
                         </div>
 
-                        {{-- Strats Description --}}
-                        <label for="strats_desc">Strats desc</label>
-                        <div class="form-group" id="editor">
-                            <input type="text" class="form-control @error('strats_desc') is-invalid @enderror" id="strats_desc"
-                                name="strats_desc" placeholder="Strats Description" value="{{ old('strats_desc') }}">
-                            @error('strats_desc')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        {{-- Strats Description w/ ckeditor --}}
+                        <div class="form-group">
+                            <label for="strats_desc">Strats desc</label>
+                            <div>
+                                <textarea name="strats_desc" class="form-control ckeditor @error('strats_desc') is-invalid @enderror" id="strats_desc"
+                                    cols="30" rows="10" placeholder="Strats Description" required></textarea>
+                            </div>
                         </div>
 
                         {{-- Agent one --}}
@@ -74,7 +72,7 @@
                             <select name="agent_one" class="form-control select2-dropdown">
                                 <option value="">Select Agent (1)</option>
                                 @foreach ($agents as $item)
-                                    <option value="{{ $item->id }}">{{ $item->agent_name}}</option>
+                                    <option value="{{ $item->id }}">{{ $item->agent_name }}</option>
                                 @endforeach
                             </select>
                             @error('agent_one')
@@ -82,23 +80,114 @@
                             @enderror
                         </div>
 
-                        {{-- Agent one desc --}}
-                        <label for="agent_one_desc">Agent One Desc</label>
+                        {{-- Agent one desc w/ ckeditor --}}
                         <div class="form-group">
-                            <input type="textarea" class="form-control ckeditor @error('agent_one_desc') is-invalid @enderror"
-                                id="agent_one_desc" name="agent_one_desc" placeholder="Agent 1 Description">
-                            @error('agent_one_desc')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                            <label for="agent_one_desc">Agent One Desc</label>
+                            <div>
+                                <textarea name="agent_one_desc" class="form-control ckeditor @error('agent_one_desc') is-invalid @enderror" id="agent_one_desc"
+                                cols="30" rows="10" placeholder="Agent one desc" required></textarea>
+                            </div>
+                        </div>
+
+                        {{-- Agent two --}}
+                        <div class="form-group">
+                            <label for="agent_two">Agent Two</label>
+                            <select name="agent_two" class="form-control select2-dropdown">
+                                <option value="">Select Agent (2)</option>
+                                @foreach ($agents as $item)
+                                    <option value="{{ $item->id }}">{{ $item->agent_name }}</option>
+                                @endforeach
+                            </select>
+                            @error('agent_two')
+                                {{ $message }}
                             @enderror
                         </div>
+
+                        {{-- Agent two desc w/ ckeditor --}}
+                        <div class="form-group">
+                            <label for="agent_two_desc">Agent Two Desc</label>
+                            <div>
+                                <textarea name="agent_two_desc" class="form-control ckeditor @error('agent_two_desc') is-invalid @enderror" id="agent_two_desc"
+                                cols="30" rows="10" placeholder="Agent two desc" required></textarea>
+                            </div>
+                        </div>
+
+                        {{-- Agent three --}}
+                        <div class="form-group">
+                            <label for="agent_three">Agent Three</label>
+                            <select name="agent_three" class="form-control select2-dropdown">
+                                <option value="">Select Agent (3)</option>
+                                @foreach ($agents as $item)
+                                    <option value="{{ $item->id }}">{{ $item->agent_name }}</option>
+                                @endforeach
+                            </select>
+                            @error('agent_three')
+                                {{ $message }}
+                            @enderror
+                        </div>
+
+                        {{-- Agent one three w/ ckeditor --}}
+                        <div class="form-group">
+                            <label for="agent_three_desc">Agent Three Desc</label>
+                            <div>
+                                <textarea name="agent_three_desc" class="form-control ckeditor @error('agent_three_desc') is-invalid @enderror" id="agent_three_desc"
+                                cols="30" rows="10" placeholder="Agent three desc" required></textarea>
+                            </div>
+                        </div>
+
+                        {{-- Agent four --}}
+                        <div class="form-group">
+                            <label for="agent_four">Agent Four</label>
+                            <select name="agent_four" class="form-control select2-dropdown">
+                                <option value="">Select Agent (4)</option>
+                                @foreach ($agents as $item)
+                                    <option value="{{ $item->id }}">{{ $item->agent_name }}</option>
+                                @endforeach
+                            </select>
+                            @error('agent_four')
+                                {{ $message }}
+                            @enderror
+                        </div>
+
+                        {{-- Agent four desc w/ ckeditor --}}
+                        <div class="form-group">
+                            <label for="agent_four_desc">Agent Four Desc</label>
+                            <div>
+                                <textarea name="agent_four_desc" class="form-control ckeditor @error('agent_four_desc') is-invalid @enderror" id="agent_four_desc"
+                                cols="30" rows="10" placeholder="Agent four desc" required></textarea>
+                            </div>
+                        </div>
+
+                        {{-- Agent five --}}
+                        <div class="form-group">
+                            <label for="agent_five">Agent Five</label>
+                            <select name="agent_five" class="form-control select2-dropdown">
+                                <option value="">Select Agent (5)</option>
+                                @foreach ($agents as $item)
+                                    <option value="{{ $item->id }}">{{ $item->agent_name }}</option>
+                                @endforeach
+                            </select>
+                            @error('agent_five')
+                                {{ $message }}
+                            @enderror
+                        </div>
+
+                        {{-- Agent five desc w/ ckeditor --}}
+                        <div class="form-group">
+                            <label for="agent_five_desc">Agent Five Desc</label>
+                            <div>
+                                <textarea name="agent_five_desc" class="form-control ckeditor @error('agent_five_desc') is-invalid @enderror" id="agent_five_desc"
+                                cols="30" rows="10" placeholder="Agent five desc" required></textarea>
+                            </div>
+                        </div>
+
+                        {{-- ckeditor scripts --}}
                         <script>
                             ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
-                                .catch( error => {
-                                    console.error( error );
-                                } );
+                                .create(document.querySelector('#editor'))
+                                .catch(error => {
+                                    console.error(error);
+                                });
                         </script>
                 </div>
                 <div class="card-footer text-right">

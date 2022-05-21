@@ -27,6 +27,15 @@ class StratsController extends Controller
         $strats = new Strats;
 
         $strats->map_name = $request->input('map_name');
+
+        if($request->hasFile('strats_image'))
+        {
+            $file = $request->file('strats_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('', $filename);
+        }
+
         $strats->strats_name = $request->input('strats_name');
         $strats->strats_desc = $request->input('strats_desc');
         $strats->agent_one = $request->input('agent_one');
@@ -40,14 +49,7 @@ class StratsController extends Controller
         $strats->agent_five = $request->input('agent_five');
         $strats->agent_five_desc = $request->input('agent_five_desc');
 
-        if($request->hasFile('strats_image'))
-        {
-            $file       = $request->file('strats_image');
-            $extention  = $file->getClientOriginalExtension();
-            $filename   = time().'.'.$extention;
-            $file      -> move('public/assets/img/', $filename);
-            $strats    -> strats_image = $filename;
-        }
+
         $strats->save();
         return redirect()->route('strats.create')
             ->with('status', 'Strats Added Successfully');
