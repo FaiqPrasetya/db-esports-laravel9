@@ -23,16 +23,6 @@
                         @csrf
                         <div class="form-group">
                             <label for="map_name">Map</label>
-                            <input type="text" class="form-control" id="map_name"
-                                name="map_name" placeholder="Map Select" list="list_map">
-                            {{-- <datalist id="list_map">
-                                @foreach ($maps as $item )
-                                <option value="{{ $item->id }}">{{ $item->map_name }}</option>
-                                @endforeach --}}
-                        </div>
-
-                        <div class="form-group">
-                            <label for="map_name">Map</label>
                             <select name="map_name" class="form-control select2-dropdown">
                                 <option value="">Map Select</option>
                                 @foreach ($maps as $item)
@@ -83,6 +73,21 @@
                                 <option value="Sage"></option>
                                 <option value="Viper"></option>
                         </div>
+
+                        {{-- Pending --}}
+                        <div class="form-group">
+                            <label for="agent_one">Agent One</label>
+                            <select name="agent_one" class="form-control select2-dropdown">
+                                <option value="">Select Agent (1)</option>
+                                @foreach ($agents as $item)
+                                    <option value="{{ $item->id }}">{{ $item->agent_name}}</option>
+                                @endforeach
+                            </select>
+                            @error('agent_one')
+                                {{ $message }}
+                            @enderror
+                        </div>
+                        {{-- Pending --}}
 
                         <div class="form-group">
                             <label for="agent_one_desc">Agent One Desc</label>

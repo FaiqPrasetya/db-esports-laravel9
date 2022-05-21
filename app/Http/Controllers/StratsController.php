@@ -16,8 +16,10 @@ class StratsController extends Controller
 
     public function create()
     {
+        //amaps aku delete + pindah ke create
         $maps = Maps::all();
-        return view('strats.create', compact('maps'));
+        $agents = Agents::all();
+        return view('strats.create', compact('maps', 'agents'));
     }
 
     public function store(Request $request)
@@ -84,13 +86,5 @@ class StratsController extends Controller
         $strats = Strats::where('id', $id)->delete();
         return redirect()->route('strats.index')
             ->with('success', 'Strats Successfully Deleted');
-    }
-
-    public function amaps()
-    {
-        $agents = Agents::all();
-        $maps   = Maps::all();
-
-        return view('strats.create', compact(['agents', 'maps']));
     }
 }
