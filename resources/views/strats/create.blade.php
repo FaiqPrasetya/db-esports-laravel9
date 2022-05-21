@@ -21,6 +21,7 @@
                 <div class="card-body">
                     <form action="{{ route('strats.store') }}" method="post">
                         @csrf
+                        {{-- Maps --}}
                         <div class="form-group">
                             <label for="map_name">Map</label>
                             <select name="map_name" class="form-control select2-dropdown">
@@ -34,6 +35,16 @@
                             @enderror
                         </div>
 
+                        {{-- Strats image upload --}}
+                        <div class="form-group">
+                            <label for="strats_image">Strats Image Upload</label>
+                            <input type="file" name="strats_image" class="file-control" @error('strats_image')@enderror id="strats_image">
+                            @error('strats_image')
+                                {{ $message }}
+                            @enderror
+                        </div>
+
+                        {{-- Strats Name --}}
                         <div class="form-group">
                             <label for="strats_name">Strats Name</label>
                             <input type="text" class="form-control @error('strats_name') is-invalid @enderror" id="strats_name"
@@ -45,8 +56,9 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="strats_desc">Strats desc</label>
+                        {{-- Strats Description --}}
+                        <label for="strats_desc">Strats desc</label>
+                        <div class="form-group" id="editor">
                             <input type="text" class="form-control @error('strats_desc') is-invalid @enderror" id="strats_desc"
                                 name="strats_desc" placeholder="Strats Description" value="{{ old('strats_desc') }}">
                             @error('strats_desc')
@@ -56,25 +68,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="agent_one">Agent One</label>
-                            <input type="text" class="form-control @error('agent_one') is-invalid @enderror" id="agent_one"
-                                name="agent_one" placeholder="Ex: Sova" value="{{ old('agent_one') }}" list="list_agent">
-                            <datalist id="list_agent">
-                                <option value="Astra"></option>
-                                <option value="Breach"></option>
-                                <option value="Brimstone"></option>
-                                <option value="Chyper"></option>
-                                <option value="Fade"></option>
-                                <option value="Neon"></option>
-                                <option value="Omen"></option>
-                                <option value="Reyna"></option>
-                                <option value="Sova"></option>
-                                <option value="Sage"></option>
-                                <option value="Viper"></option>
-                        </div>
-
-                        {{-- Pending --}}
+                        {{-- Agent one --}}
                         <div class="form-group">
                             <label for="agent_one">Agent One</label>
                             <select name="agent_one" class="form-control select2-dropdown">
@@ -87,11 +81,11 @@
                                 {{ $message }}
                             @enderror
                         </div>
-                        {{-- Pending --}}
 
+                        {{-- Agent one desc --}}
+                        <label for="agent_one_desc">Agent One Desc</label>
                         <div class="form-group">
-                            <label for="agent_one_desc">Agent One Desc</label>
-                            <input type="textarea" class="form-control @error('agent_one_desc') is-invalid @enderror"
+                            <input type="textarea" class="form-control ckeditor @error('agent_one_desc') is-invalid @enderror"
                                 id="agent_one_desc" name="agent_one_desc" placeholder="Agent 1 Description">
                             @error('agent_one_desc')
                                 <div class="invalid-feedback">
@@ -99,6 +93,13 @@
                                 </div>
                             @enderror
                         </div>
+                        <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                } );
+                        </script>
                 </div>
                 <div class="card-footer text-right">
                     <button class="btn btn-primary">Submit</button>

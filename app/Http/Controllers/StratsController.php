@@ -27,6 +27,7 @@ class StratsController extends Controller
         $strats = new Strats;
 
         $strats->map_name = $request->input('map_name');
+        $strats->strats_name = $request->input('strats_name');
         $strats->strats_desc = $request->input('strats_desc');
         $strats->agent_one = $request->input('agent_one');
         $strats->agent_one_desc = $request->input('agent_one_desc');
