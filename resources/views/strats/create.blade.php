@@ -22,24 +22,14 @@
                     <form action="{{ route('strats.store') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label>Map</label>
-                            <select name="map_name" class="form-control select2">
-                                <option value="">Choose Maps</option>
-                                @foreach ($maps as $item)
-                                    <option value="{{ $item->id }}">{{ $item->map_name }}</option>
-                                @endforeach
-                            </div>
-                        </select>
-                        {{-- <input type="text" class="form-control" id="map_name"
-                            name="map_name" placeholder="Choice Your Map" list="list_map"> --}}
-                        {{-- <datalist id="list_map"> --}}
-                            {{-- <option value="Ascent"></option>
-                            <option value="Bind"></option>
-                            <option value="Breeze"></option>
-                            <option value="Fracture"></option>
-                            <option value="Haven"></option>
-                            <option value="Icebox"></option>
-                            <option value="Split"></option> --}}
+                            <label for="map_name">Map</label>
+                            <input type="text" class="form-control" id="map_name"
+                                name="map_name" placeholder="Choice Your Map" list="list_map">
+                            <datalist id="list_map">
+                                {{-- @foreach ($maps as $item )
+                                <option value="{{ $item->id }}">{{ $item->map_name }}</option>
+                                @endforeach --}}
+                        </div>
 
                         <div class="form-group">
                             <label for="strats_name">Strats Name</label>
