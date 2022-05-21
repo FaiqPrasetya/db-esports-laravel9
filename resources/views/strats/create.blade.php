@@ -16,7 +16,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Validasi Tambah Data</h4>
+                    <h4>Tambah Strats</h4>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('strats.store') }}" method="post">
@@ -24,11 +24,24 @@
                         <div class="form-group">
                             <label for="map_name">Map</label>
                             <input type="text" class="form-control" id="map_name"
-                                name="map_name" placeholder="Choice Your Map" list="list_map">
-                            <datalist id="list_map">
-                                {{-- @foreach ($maps as $item )
+                                name="map_name" placeholder="Map Select" list="list_map">
+                            {{-- <datalist id="list_map">
+                                @foreach ($maps as $item )
                                 <option value="{{ $item->id }}">{{ $item->map_name }}</option>
                                 @endforeach --}}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="map_name">Map</label>
+                            <select name="map_name" class="form-control select2-dropdown">
+                                <option value="">Map Select</option>
+                                @foreach ($maps as $item)
+                                    <option value="{{ $item->id }}">{{ $item->map_name}}</option>
+                                @endforeach
+                            </select>
+                            @error('map_name')
+                                {{ $message }}
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -45,7 +58,7 @@
                         <div class="form-group">
                             <label for="strats_desc">Strats desc</label>
                             <input type="text" class="form-control @error('strats_desc') is-invalid @enderror" id="strats_desc"
-                                name="strats_desc" placeholder="Enter Strats desc" value="{{ old('strats_desc') }}">
+                                name="strats_desc" placeholder="Strats Description" value="{{ old('strats_desc') }}">
                             @error('strats_desc')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -56,7 +69,7 @@
                         <div class="form-group">
                             <label for="agent_one">Agent One</label>
                             <input type="text" class="form-control @error('agent_one') is-invalid @enderror" id="agent_one"
-                                name="agent_one" placeholder="Enter Strats Name" value="{{ old('agent_one') }}" list="list_agent">
+                                name="agent_one" placeholder="Ex: Sova" value="{{ old('agent_one') }}" list="list_agent">
                             <datalist id="list_agent">
                                 <option value="Astra"></option>
                                 <option value="Breach"></option>
@@ -74,7 +87,7 @@
                         <div class="form-group">
                             <label for="agent_one_desc">Agent One Desc</label>
                             <input type="textarea" class="form-control @error('agent_one_desc') is-invalid @enderror"
-                                id="agent_one_desc" name="agent_one_desc" placeholder="Enter Your Agent Desc 1">
+                                id="agent_one_desc" name="agent_one_desc" placeholder="Agent 1 Description">
                             @error('agent_one_desc')
                                 <div class="invalid-feedback">
                                     {{ $message }}

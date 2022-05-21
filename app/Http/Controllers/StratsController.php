@@ -16,7 +16,8 @@ class StratsController extends Controller
 
     public function create()
     {
-        return view('strats.create');
+        $maps = Maps::all();
+        return view('strats.create', compact('maps'));
     }
 
     public function store(Request $request)
