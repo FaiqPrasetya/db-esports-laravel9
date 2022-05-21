@@ -29,6 +29,7 @@ return new class extends Migration
             $table->text('agent_four_desc');
             $table->string('agent_five');
             $table->text('agent_five_desc');
+            $table->timestamps();
         });
     }
 

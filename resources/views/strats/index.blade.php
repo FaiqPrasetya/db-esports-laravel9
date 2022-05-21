@@ -42,12 +42,18 @@
                                             <th class="text-right">Action</th>
                                         </tr>
 
-                                        @foreach ($strats as $item)
+                                        @foreach ($strats as $key => $item)
                                             <tr>
-                                                <td>{{ $item->id }}</td>
+                                                <td>{{ ($strats->currentPage() - 1) * $strats->perPage() + $key + 1 }}</td>
+
                                                 <td>{{ $item->strats_name }}</td>
                                                 <td>{{ $item->map_name }}</td>
-                                                <td>{{ $item->strats_image }}</td>
+
+                                                <td>
+                                                    <img src="{{ asset('uploads/images/' . $item->strats_image) }}"
+                                                        alt="{{ $item->strats_name }}" width="30%" height="30%">
+                                                </td>
+
                                                 <td>{{ $item->strats_desc }}</td>
                                                 <td class="text-right">
                                                     <div class="d-flex justify-content-end">

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\DB;
 use App\Models\Maps;
 use App\Models\Agents;
 use App\Models\Strats;
@@ -8,9 +10,16 @@ use Illuminate\Http\Request;
 
 class StratsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $strats = Strats::all();
+        //ambil data
+        $strats = DB::table('strats')
+        //ambil data tapi pakai search bar
+        ->when($request->input('strats_name'), function ($query) use ($request) {
+            return $query->where('strats_name', 'like', '%'.$request->input('strats_name').'%');
+        })
+        ->select('id', 'strats_name', 'map_name', 'strats_image', 'strats_desc')->paginate(10);
+        // $strats = Strats::all();
         return view('strats.index', compact('strats'));
     }
 
@@ -33,7 +42,8 @@ class StratsController extends Controller
             $file = $request->file('strats_image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('', $filename);
+            $file->move('uploads/images', $filename);
+            $strats->strats_image = $filename;
         }
 
         $strats->strats_name = $request->input('strats_name');
