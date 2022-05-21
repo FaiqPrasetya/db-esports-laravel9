@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Maps;
+use App\Models\Agents;
 use App\Models\Strats;
 use Illuminate\Http\Request;
 
@@ -81,5 +83,13 @@ class StratsController extends Controller
         $strats = Strats::where('id', $id)->delete();
         return redirect()->route('strats.index')
             ->with('success', 'Strats Successfully Deleted');
+    }
+
+    public function amaps()
+    {
+        $agents = Agents::all();
+        $maps   = Maps::all();
+
+        return view('strats.create', compact(['agents', 'maps']));
     }
 }

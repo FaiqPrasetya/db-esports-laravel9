@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AmapsController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\Menu\MenuGroupController;
 use App\Http\Controllers\Menu\MenuItemController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\RoleAndPermission\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StratsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,8 +33,14 @@ use App\Http\Controllers\UserController;
 // });
 
 // Strats
-Route::get('/strats', function() {
-    return view('strats.index');
+Route::prefix('strats-management')->group(function(){
+    Route::resource('strats', StratsController::class);
+    Route::get('index', [StratsController::class, 'index'])->name('strats.index');
+    Route::get('create', [StratsController::class, 'create'])->name('strats.create');
+    Route::post('store', [StratsController::class, 'store'])->name('strats.store');
+    Route::delete('index/{id}', [StratsController::class, 'destroy'])->name('strats.destroy');
+    Route::get('edit/{id}', [StratsController::class, 'edit'])->name('strats.edit');
+    Route::put('update/{id}', [StratsController::class, 'update'])->name('strats.update');
 });
 
 // buka web langsung ke landingpage
