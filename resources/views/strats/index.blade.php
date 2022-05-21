@@ -26,25 +26,10 @@
                             <h4>Strats Master List</h4>
                             <div class="card-header-action">
                                 <a class="btn btn-icon icon-left btn-primary"
-                                    href="{{ route('assign.user.create') }}">Add Strats</a>
+                                    href="{{ route('strats.create') }}">Add Strats</a>
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="show-search mb-3" style="display: none">
-                                <form id="search" method="GET" action="{{ route('assign.user.index') }}">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label for="role">Role</label>
-                                            <input type="text" name="name" class="form-control" id="name"
-                                                placeholder="Role Name">
-                                        </div>
-                                    </div>
-                                    <div class="text-right">
-                                        <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                                        <a class="btn btn-secondary" href="{{ route('assign.user.index') }}">Reset</a>
-                                    </div>
-                                </form>
-                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-md">
                                     <tbody>
@@ -56,24 +41,33 @@
                                             <th>Description</th>
                                             <th class="text-right">Action</th>
                                         </tr>
-                                        {{-- @foreach ($users as $key => $user)
+
+                                        @foreach ($strats as $item)
                                             <tr>
-                                                <td>{{ $users->firstItem() + $key }}</td>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ implode(', ', $user->getRoleNames()->toArray()) }}</td>
+                                                <td>{{ $item->id }}</td>
+                                                <td>{{ $item->strats_name }}</td>
+                                                <td>{{ $item->map_name }}</td>
+                                                <td>{{ $item->strats_image }}</td>
+                                                <td>{{ $item->strats_desc }}</td>
                                                 <td class="text-right">
                                                     <div class="d-flex justify-content-end">
-                                                        <a href="{{ route('assign.user.edit', $user->id) }}"
+                                                        <a href="{{ route('strats.edit', $item->id) }}"
                                                             class="btn btn-sm btn-info btn-icon "><i
-                                                                class="fas fa-edit"></i>
-                                                            Edit</a>
+                                                                class="fas fa-edit"></i>Edit</a>
+                                                        <form action="{{ route('strats.destroy', $item->id) }}"
+                                                            method="POST" class="ml-2">
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <input type="hidden" name="_token"value="{{ csrf_token() }}">
+                                                                <button class="btn btn-sm btn-danger btn-icon">
+                                                                <i class="fas fa-times"></i> Delete </button>
+                                                        </form>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        @endforeach --}}
+                                        @endforeach
                                     </tbody>
                                 </table>
+
                                 {{-- <div class="d-flex justify-content-center">
                                     {{ $users->withQueryString()->links() }}
                                 </div> --}}
