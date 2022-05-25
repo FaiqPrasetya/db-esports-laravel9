@@ -67,8 +67,10 @@ class StratsController extends Controller
 
     public function edit($id)
     {
+        $maps = Maps::all();
+        $agents = Agents::all();
         $strats = Strats::find($id);
-        return view('strats.edit', compact('strats'));
+        return view('strats.edit', compact('strats', 'maps', 'agents'));
     }
 
     public function update(Request $request, $id)
