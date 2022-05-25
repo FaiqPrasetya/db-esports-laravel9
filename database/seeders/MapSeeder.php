@@ -18,31 +18,31 @@ class MapSeeder extends Seeder
         Maps::insert(
             [
                 [
-                    'map_name' => 'fracture',
+                    'map_name' => 'Fracture',
                     'map_file' => 'fracture.png',
                 ],
                 [
-                    'map_name' => 'haven',
+                    'map_name' => 'Haven',
                     'map_file' => 'haven.png',
                 ],
                 [
-                    'map_name' => 'icebox',
+                    'map_name' => 'Icebox',
                     'map_file' => 'icebox.png',
                 ],
                 [
-                    'map_name' => 'split',
+                    'map_name' => 'Split',
                     'map_file' => 'split.png',
                 ],
                 [
-                    'map_name' => 'breeze',
+                    'map_name' => 'Breeze',
                     'map_file' => 'breeze.png',
                 ],
                 [
-                    'map_name' => 'bind',
+                    'map_name' => 'Bind',
                     'map_file' => 'bind.png',
                 ],
                 [
-                    'map_name' => 'ascent',
+                    'map_name' => 'Ascent',
                     'map_file' => 'ascent.png',
                 ],
             ]
