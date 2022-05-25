@@ -15,20 +15,20 @@ return new class extends Migration
     {
         Schema::create('strats', function (Blueprint $table) {
             $table->id();
-            $table->string('map_name');
-            $table->string('strats_image');
-            $table->string('strats_name');
-            $table->text('strats_desc');
-            $table->string('agent_one');
-            $table->text('agent_one_desc');
-            $table->string('agent_two');
-            $table->text('agent_two_desc');
-            $table->string('agent_three');
-            $table->text('agent_three_desc');
-            $table->string('agent_four');
-            $table->text('agent_four_desc');
-            $table->string('agent_five');
-            $table->text('agent_five_desc');
+            $table->string('map_name')->nullable();
+            $table->string('strats_image')->nullable();
+            $table->string('strats_name')->nullable();
+            $table->text('strats_desc')->nullable();
+            $table->string('agent_one')->nullable();
+            $table->text('agent_one_desc')->nullable();
+            $table->string('agent_two')->nullable();
+            $table->text('agent_two_desc')->nullable();
+            $table->string('agent_three')->nullable();
+            $table->text('agent_three_desc')->nullable();
+            $table->string('agent_four')->nullable();
+            $table->text('agent_four_desc')->nullable();
+            $table->string('agent_five')->nullable();
+            $table->text('agent_five_desc')->nullable();
             $table->timestamps();
         });
     }
