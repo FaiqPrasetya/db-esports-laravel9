@@ -61,7 +61,7 @@ class StratsController extends Controller
 
 
         $strats->save();
-        return redirect()->route('strats.create')
+        return redirect()->route('strats.index')
             ->with('status', 'Strats Added Successfully');
     }
 
