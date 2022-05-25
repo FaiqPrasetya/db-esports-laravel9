@@ -84,6 +84,7 @@ https://templatemo.com/tm-556-catalog-z
                     <figure class="effect-ming tm-video-item">
                         <img src="{{ asset('assets/img/old/maps/' . $map->map_file ) }}" alt="Image" class="img-fluid">
                         <figcaption class="d-flex align-items-center justify-content-center">
+                            {{-- Map name kedepannya pgn diganti pake fitur "Last updated on *tanggal*" --}}
                             <h2>{{ $map->map_name }}</h2>
                             <a href="" >View more</a>
                         </figcaption>
