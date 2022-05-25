@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StratsController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +49,9 @@ Route::prefix('strats-management')->group(function(){
 Route::get('/', function () {
     return view('menu.main-menu.index');
 });
+
+// home
+Route::get('home', [HomeController::class, 'index'])->name('home');
 
 // login nya (for some reason ndak mau ngambil /login, nanti error, tapi anything yang bukan /login bisa)
 Route::get('/memberlogin', function() {
