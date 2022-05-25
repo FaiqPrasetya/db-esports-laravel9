@@ -72,7 +72,7 @@
                             <select name="agent_one" id="agent_one" class="form-control">
                                 <option value="">Select Agent</option>
                                 @foreach($agents as $agent)
-                                    <option value="{{ $agent->id }}">{{ $agent->agent_name }}</option>
+                                    <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -95,7 +95,7 @@
                             <select name="agent_two" id="agent_two" class="form-control">
                                 <option value="">Select Agent</option>
                                 @foreach($agents as $agent)
-                                    <option value="{{ $agent->id }}">{{ $agent->agent_name }}</option>
+                                    <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -118,7 +118,7 @@
                             <select name="agent_three" id="agent_three" class="form-control">
                                 <option value="">Select Agent</option>
                                 @foreach($agents as $agent)
-                                    <option value="{{ $agent->id }}">{{ $agent->agent_name }}</option>
+                                    <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -141,7 +141,7 @@
                             <select name="agent_four" id="agent_four" class="form-control">
                                 <option value="">Select Agent</option>
                                 @foreach($agents as $agent)
-                                    <option value="{{ $agent->id }}">{{ $agent->agent_name }}</option>
+                                    <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -164,7 +164,7 @@
                             <select name="agent_five" id="agent_five" class="form-control">
                                 <option value="">Select Agent</option>
                                 @foreach($agents as $agent)
-                                    <option value="{{ $agent->id }}">{{ $agent->agent_name }}</option>
+                                    <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
                             </select>
                         </div>
