@@ -19,31 +19,31 @@ class MapSeeder extends Seeder
             [
                 [
                     'map_name' => 'fracture',
-                    'map_file' => 'fracture.jpg',
+                    'map_file' => 'fracture.png',
                 ],
                 [
                     'map_name' => 'haven',
-                    'map_file' => 'haven.jpeg',
+                    'map_file' => 'haven.png',
                 ],
                 [
                     'map_name' => 'icebox',
-                    'map_file' => 'icebox.jpg',
+                    'map_file' => 'icebox.png',
                 ],
                 [
                     'map_name' => 'split',
-                    'map_file' => 'split.jpeg',
+                    'map_file' => 'split.png',
                 ],
                 [
                     'map_name' => 'breeze',
-                    'map_file' => 'breeze.jpg',
+                    'map_file' => 'breeze.png',
                 ],
                 [
                     'map_name' => 'bind',
-                    'map_file' => 'bind.jpeg',
+                    'map_file' => 'bind.png',
                 ],
                 [
                     'map_name' => 'ascent',
-                    'map_file' => 'ascent.jpeg',
+                    'map_file' => 'ascent.png',
                 ],
             ]
         );
