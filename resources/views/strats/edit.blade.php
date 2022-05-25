@@ -12,7 +12,7 @@
         <div class="section-body">
             <h2 class="section-title">Edit Strats</h2>
             <div class="card">
-                <form action="{{ route('strats.update', $strats->id) }}" method="POST">
+                <form action="{{ route('strats.update', $strats->id) }}" method="POST" enctype="multipart/form-data">
                     <div class="card-header">
                         <h4>Ubah Strats</h4>
                     </div>
@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <label for="map_name">Map</label>
                             <select name="map_name" id="map_name" class="form-control" >
-                                <option value="">{{ $strats->map_name }}</option>
+                                <option value="{{ $strats->map_name }}">{{ $strats->map_name }}</option>
                                 @foreach ($maps as $item)
                                     <option value="{{ $item->map_name }}">{{ $item->map_name }}</option>
                                 @endforeach
@@ -64,7 +64,7 @@
                         <div class="form-group">
                             <label for="agent_one">Agent One</label>
                             <select name="agent_one" id="agent_one" class="form-control" >
-                                <option value="">{{ $strats->agent_one }}</option>
+                                <option value="{{ $strats->agent_one }}">{{ $strats->agent_one }}</option>
                                 @foreach($agents as $agent)
                                     <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
@@ -86,7 +86,7 @@
                         <div class="form-group">
                             <label for="agent_two">Agent Two</label>
                             <select name="agent_two" id="agent_two" class="form-control" >
-                                <option value="">{{ $strats->agent_two }}</option>
+                                <option value="{{ $strats->agent_two }}">{{ $strats->agent_two }}</option>
                                 @foreach($agents as $agent)
                                     <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
@@ -108,7 +108,7 @@
                         <div class="form-group">
                             <label for="agent_three">Agent Three</label>
                             <select name="agent_three" id="agent_three" class="form-control" >
-                                <option value="">{{ $strats->agent_three }}</option>
+                                <option value="{{ $strats->agent_three }}">{{ $strats->agent_three }}</option>
                                 @foreach($agents as $agent)
                                     <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
@@ -130,7 +130,7 @@
                         <div class="form-group">
                             <label for="agent_four">Agent Four</label>
                             <select name="agent_four" id="agent_four" class="form-control" >
-                                <option value="">{{ $strats->agent_four }}</option>
+                                <option value="{{ $strats->agent_four }}">{{ $strats->agent_four }}</option>
                                 @foreach($agents as $agent)
                                     <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
@@ -152,7 +152,7 @@
                         <div class="form-group">
                             <label for="agent_five">Agent five</label>
                             <select name="agent_five" id="agent_five" class="form-control" >
-                                <option value="">{{ $strats->agent_five }}</option>
+                                <option value="{{ $strats->agent_five }}">{{ $strats->agent_five }}</option>
                                 @foreach($agents as $agent)
                                     <option value="{{ $agent->agent_name }}">{{ $agent->agent_name }}</option>
                                 @endforeach
