@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use App\Models\Maps;
 use App\Models\Agents;
 use App\Models\Strats;
@@ -78,6 +79,23 @@ class StratsController extends Controller
         $strats = Strats::find($id);
 
         $strats->map_name = $request->input('map_name');
+
+        if($request->hasFile('strats_image')) {
+
+            $destination = 'uploads/images'.$strats->strats_image;
+
+            if(File::exists($destination)) {
+
+                File::delete($destination);
+            }
+
+            $file = $request->file('strats_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/images', $filename);
+            $strats->strats_image = $filename;
+        }
+
         $strats->strats_desc = $request->input('strats_desc');
         $strats->agent_one = $request->input('agent_one');
         $strats->agent_one_desc = $request->input('agent_one_desc');
@@ -93,7 +111,7 @@ class StratsController extends Controller
         $strats->update();
 
         return redirect()->route('strats.index')
-            ->with('success', 'Strats Successfully Update');
+            ->with('success', 'Strats Successfully Updated');
     }
 
     public function destroy($id)

@@ -30,15 +30,20 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group"><hr>
                             <label for="strats_image">File</label>
                             <input type="file" class="file-control @error('strats_image') is-invalid @enderror"
                                 id="strats_image" name="strats_image" placeholder="Upload File"  value="{{ $strats->strats_image }}">
+                                <div>
+                                    <span>Gambar lama:</span>
+                                    <img src="{{ asset('uploads/images/'.$strats->strats_image)}}" alt="{{ $strats->strats_image}}" width="20%" height="20%">
+                                </div>
+                                <h6 style="color: red">Biarkan jika tidak ingin mengganti gambar</h6>
                             @error('strats_image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             @enderror
-                        </div>
+                        </div><hr>
 
                         <div class="form-group">
                             <label for="strats_name">Strats Name</label>
