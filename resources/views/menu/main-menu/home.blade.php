@@ -92,7 +92,7 @@ https://templatemo.com/tm-556-catalog-z
                         <figcaption class="d-flex align-items-center justify-content-center">
                             {{-- Map name kedepannya pgn diganti pake fitur "Last updated on *tanggal*" --}}
                             <h2>{{ $map->map_name }}</h2>
-                            <a href="" >View more</a>
+                            <a href="{{ route('maps.' . $map->map_name) }}" >View more</a>
                         </figcaption>
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
