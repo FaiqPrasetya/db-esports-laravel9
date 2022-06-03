@@ -54,7 +54,7 @@
                                     <td class="text-center">{{ $item->strats_name }}</td>
                                     <td class="text-center">
                                         <div class="d-flex justify-content-center">
-                                            <a href="{{ route('strats.edit', $item->id) }}"
+                                            <a href="{{ route('maps.view', $item->id) }}"
                                                 class="btn btn-sm btn-success btn-icon "><i
                                                     class="fas fa-edit"></i>View</a>
                                         </div>
