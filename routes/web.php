@@ -60,6 +60,7 @@ Route::prefix('maps-management')->group(function(){
     Route::get('breeze', [MapsController::class, 'breeze'])->name('maps.Breeze');
     Route::get('bind', [MapsController::class, 'bind'])->name('maps.Bind');
     Route::get('ascent', [MapsController::class, 'ascent'])->name('maps.Ascent');
+    Route::get('view/{id}', [MapsController::class, 'view'])->name('maps.view');
 });
 
 // login nya (for some reason ndak mau ngambil /login, nanti error, tapi anything yang bukan /login bisa)
