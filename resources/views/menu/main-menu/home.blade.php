@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog-Z Bootstrap 5.0 HTML Template</title>
     <link rel="stylesheet" href="{{ asset('css/home/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home/templatemo-style.css') }}">
     <!--
 
@@ -58,8 +58,8 @@ https://templatemo.com/tm-556-catalog-z
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="{{ asset('assets/img/valwp.png') }}">
         <div>
             <a href="" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Home</i></a>
-            <a href="" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Account Management</i></a>
-            <a href="" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Strats Upload</i></a>
+            <a href="{{ route('assign.user.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Account Management</i></a>
+            <a href="{{ route('strats.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Strats Upload</i></a>
         </div>
     </div>
 
