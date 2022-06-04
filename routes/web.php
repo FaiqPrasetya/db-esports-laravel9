@@ -17,6 +17,7 @@ use App\Models\User;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StratsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MapsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +51,17 @@ Route::get('/', function () {
     return view('menu.main-menu.index');
 });
 
-// home
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::prefix('maps-management')->group(function(){
+    Route::resource('map', MapsController::class);
+    Route::get('fracture', [MapsController::class, 'fracture'])->name('maps.Fracture');
+    Route::get('haven', [MapsController::class, 'haven'])->name('maps.Haven');
+    Route::get('icebox', [MapsController::class, 'icebox'])->name('maps.Icebox');
+    Route::get('split', [MapsController::class, 'split'])->name('maps.Split');
+    Route::get('breeze', [MapsController::class, 'breeze'])->name('maps.Breeze');
+    Route::get('bind', [MapsController::class, 'bind'])->name('maps.Bind');
+    Route::get('ascent', [MapsController::class, 'ascent'])->name('maps.Ascent');
+    Route::get('view/{id}', [MapsController::class, 'view'])->name('maps.view');
+});
 
 // login nya (for some reason ndak mau ngambil /login, nanti error, tapi anything yang bukan /login bisa)
 Route::get('/memberlogin', function() {
@@ -64,6 +74,8 @@ Route::group(['middleware' => ['auth','verified']], function () {
         return view('home', ['users' => User::get(),]);
     });
 
+    // home
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //user list
     Route::prefix('user-management')->group(function () {

@@ -60,6 +60,15 @@ https://templatemo.com/tm-556-catalog-z
             <a href="" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Home</i></a>
             <a href="{{ route('assign.user.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Account Management</i></a>
             <a href="{{ route('strats.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Strats Upload</i></a>
+            <a href="/dashboard" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Dashboard</i></a>
+            <a href="{{ route('user.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Account Management</i></a>
+            <a href="{{ route('strats.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Strats Upload</i></a>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Log Out</i></a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                style="display: none;">
+                @csrf
+            </form>
         </div>
     </div>
 
@@ -86,7 +95,7 @@ https://templatemo.com/tm-556-catalog-z
                         <figcaption class="d-flex align-items-center justify-content-center">
                             {{-- Map name kedepannya pgn diganti pake fitur "Last updated on *tanggal*" --}}
                             <h2>{{ $map->map_name }}</h2>
-                            <a href="" >View more</a>
+                            <a href="{{ route('maps.' . $map->map_name) }}" >View more</a>
                         </figcaption>
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
