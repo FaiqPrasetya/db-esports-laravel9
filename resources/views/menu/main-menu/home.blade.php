@@ -57,9 +57,6 @@ https://templatemo.com/tm-556-catalog-z
 
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="{{ asset('assets/img/valwp.png') }}">
         <div>
-            <a href="" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Home</i></a>
-            <a href="{{ route('assign.user.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Account Management</i></a>
-            <a href="{{ route('strats.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Strats Upload</i></a>
             <a href="/dashboard" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Dashboard</i></a>
             <a href="{{ route('user.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Account Management</i></a>
             <a href="{{ route('strats.index') }}" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Strats Upload</i></a>

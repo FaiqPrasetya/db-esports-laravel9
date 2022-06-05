@@ -56,11 +56,12 @@
                                     <div class="form-group">
                                         <div class="d-block">
                                             <label for="password" class="control-label">Password</label>
-                                            <div class="float-right">
+                                            {{-- Forgot Password dipindah ke tempat register, blom yakin final --}}
+                                            {{-- <div class="float-right">
                                                 <a href="/forgot-password" class="text-small">
                                                     Forgot Password?
                                                 </a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <!-- <label class="font-weight-bold text-uppercase">Password</label> -->
                                         <input type="password" name="password"
@@ -78,8 +79,11 @@
                                 </form>
                             </div>
                         </div>
+                        {{-- Forgot Password dipindah ke tempat register, blom yakin final --}}
                         <div class="mt-5 text-muted text-center">
-                            Don't have an account? <a href="/register">Create One</a>
+                            <a href="/forgot-password">
+                                Forgot Password?
+                            </a>
                         </div>
                         <div class="simple-footer">
                             Copyright &copy; Stisla 2018
