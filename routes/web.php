@@ -64,9 +64,11 @@ Route::prefix('maps-management')->group(function(){
 });
 
 // login nya (for some reason ndak mau ngambil /login, nanti error, tapi anything yang bukan /login bisa)
-Route::get('/memberlogin', function() {
-    return view('auth/login');
-});
+// NOTE: /login udah ada route bawaan starter codenya, jadi kita pake itu skrg
+//  Route::get('/memberlogin', function() {
+//      return view('auth/login');
+//  });
+
 
 // autentikasi, jangan disentuh
 Route::group(['middleware' => ['auth','verified']], function () {

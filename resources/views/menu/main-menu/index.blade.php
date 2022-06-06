@@ -55,7 +55,12 @@
                 <!-- Button Discover More dan Login page -->
                 <div class="primary-button">
                     <a href="#summary">Discover More</a>
-                    <a href="/memberlogin">Member Login</a>
+
+                    @auth
+                        <a href="{{ route('home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Member Login</a>
+                    @endauth
 
                     <div id="id01" class="modal">
 
