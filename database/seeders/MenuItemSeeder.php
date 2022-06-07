@@ -66,6 +66,12 @@ class MenuItemSeeder extends Seeder
                     'permission_name' => 'menu-item.index',
                     'menu_group_id' => 4,
                 ],
+                [
+                    'name' => 'Strats Dashboard',
+                    'route' => 'strats-management/index',
+                    'permission_name' => 'strats.index',
+                    'menu_group_id' => 5,
+                ],
             ]
         );
     }

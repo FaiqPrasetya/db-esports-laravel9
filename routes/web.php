@@ -30,30 +30,11 @@ use App\Http\Controllers\MapsController;
 |
 */
 
-// Strats
-Route::prefix('strats-management')->group(function(){
-    Route::resource('strats', StratsController::class);
-    Route::get('index', [StratsController::class, 'index'])->name('strats.index');
-    Route::get('create', [StratsController::class, 'create'])->name('strats.create');
-    Route::post('store', [StratsController::class, 'store'])->name('strats.store');
-    Route::delete('index/{id}', [StratsController::class, 'destroy'])->name('strats.destroy');
-    Route::get('edit/{id}', [StratsController::class, 'edit'])->name('strats.edit');
-    Route::put('update/{id}', [StratsController::class, 'update'])->name('strats.update');
-});
+
 
 // buka web langsung ke landingpage
 Route::get('/', function () {
     return view('menu.main-menu.index');
-});
-
-//New and improved(100% more efficient) maps management
-
-Route::prefix('maps-management')->group(function() {
-    //ambil resource
-    Route::resource('map', MapsController::class);
-
-    Route::get('list/{mapname}', [MapsController::class, 'call'])->name('maps.list');
-    Route::get('view/{id}', [MapsController::class, 'view'])->name('maps.view');
 });
 
 // autentikasi, jangan disentuh
@@ -65,6 +46,25 @@ Route::group(['middleware' => ['auth','verified']], function () {
 
     // home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    // strats
+    Route::prefix('strats-management')->group(function () {
+        Route::resource('strats', StratsController::class);
+        Route::get('index', [StratsController::class, 'index'])->name('strats.index');
+        Route::get('create', [StratsController::class, 'create'])->name('strats.create');
+        Route::post('store', [StratsController::class, 'store'])->name('strats.store');
+        Route::delete('index/{id}', [StratsController::class, 'destroy'])->name('strats.destroy');
+        Route::get('edit/{id}', [StratsController::class, 'edit'])->name('strats.edit');
+        Route::put('update/{id}', [StratsController::class, 'update'])->name('strats.update');
+    });
+
+    //New and improved(100% more efficient) maps management
+    Route::prefix('maps-management')->group(function () {
+        //ambil resource
+        Route::resource('map', MapsController::class);
+        Route::get('list/{mapname}', [MapsController::class, 'call'])->name('maps.list');
+        Route::get('view/{id}', [MapsController::class, 'view'])->name('maps.view');
+    });
 
     //user list
     Route::prefix('user-management')->group(function () {
@@ -78,6 +78,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('menu-group', MenuGroupController::class);
         Route::resource('menu-item', MenuItemController::class);
     });
+
     Route::group(['prefix' => 'role-and-permission'], function () {
         //role
         Route::resource('role', RoleController::class);

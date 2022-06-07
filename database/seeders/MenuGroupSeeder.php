@@ -40,9 +40,9 @@ class MenuGroupSeeder extends Seeder
                 ],
                 [
                     'name' => 'Strats Management',
-                    'icon' => 'fas fa-image',
+                    'icon' => 'fas fa-map',
                     'permission_name' => 'strats.management',
-                ]
+                ],
             ]
         );
     }
