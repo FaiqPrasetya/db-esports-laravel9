@@ -35,4 +35,7 @@ CKEDITOR.editorConfig = function(config) {
 
     // Simplify the dialog windows.
     config.removeDialogTabs = 'image:advanced;link:advanced';
+
+    // Remove the p tag from the editor
+    config.enterMode = CKEDITOR.ENTER_BR;
 };

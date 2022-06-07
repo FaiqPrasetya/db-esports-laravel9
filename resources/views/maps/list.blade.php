@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bind</title>
+    <title>Icebox</title>
     <link rel="stylesheet" href="{{ asset('css/home/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home/templatemo-style.css') }}">
@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="{{ asset('assets/img/old/maps/bind.png') }}">
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="{{ asset('assets/img/old/maps/icebox.png') }}">
         <div>
             <a href="/home" class="btn btn-outline-dark tm-search-btn" style="width: fit-content; border-radius: 10px; margin: 5px;"><i id="italic-big">Home</i></a>
         </div>
@@ -29,7 +29,7 @@
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
             <h2 class="col-6 tm-text-primary">
-                Bind
+                Icebox
             </h2>
         </div>
 
@@ -51,10 +51,10 @@
                                 <tr>
                                     <td class="text-center">{{ ($strats->currentPage() - 1) * $strats->perPage() + $key + 1 }}</td>
 
-                                    <td class="text-center">{{ $item->strats_name }}</td>
+                                    <td class="text-center">{{ $item->strats_name}}</td>
                                     <td class="text-center">
                                         <div class="d-flex justify-content-center">
-                                            <a href="{{ route('maps.view', $item->id) }}"
+                                            <a href="{{route('maps.view', $item->id)}}"
                                                 class="btn btn-sm btn-success btn-icon "><i
                                                     class="fas fa-edit"></i>View</a>
                                         </div>

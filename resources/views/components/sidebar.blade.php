@@ -1,9 +1,9 @@
 <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-        <a href="index.html">{{ $title }}</a>
+        <a href="{{route('home')}}">{{ $title }}</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
+        <a href="{{route('home')}}">St</a>
     </div>
     <ul class="sidebar-menu">
         @foreach ($menuGroups as $item)

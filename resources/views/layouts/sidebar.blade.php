@@ -1,9 +1,9 @@
 <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-        <a href="index.html">Stisla</a>
+        <a href="{{route('home')}}">Stisla</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
+        <a href="{{route('home')}}">St</a>
     </div>
     <ul class="sidebar-menu">
 

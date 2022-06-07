@@ -30,11 +30,6 @@ use App\Http\Controllers\MapsController;
 |
 */
 
-// redirect login awal, ini nanti di ganti jadi halaman landing page
-// Route::get('/', function () {
-//     return view('auth/login');
-// });
-
 // Strats
 Route::prefix('strats-management')->group(function(){
     Route::resource('strats', StratsController::class);
@@ -51,27 +46,19 @@ Route::get('/', function () {
     return view('menu.main-menu.index');
 });
 
-Route::prefix('maps-management')->group(function(){
+//New and improved(100% more efficient) maps management
+
+Route::prefix('maps-management')->group(function() {
+    //ambil resource
     Route::resource('map', MapsController::class);
-    Route::get('fracture', [MapsController::class, 'fracture'])->name('maps.Fracture');
-    Route::get('haven', [MapsController::class, 'haven'])->name('maps.Haven');
-    Route::get('icebox', [MapsController::class, 'icebox'])->name('maps.Icebox');
-    Route::get('split', [MapsController::class, 'split'])->name('maps.Split');
-    Route::get('breeze', [MapsController::class, 'breeze'])->name('maps.Breeze');
-    Route::get('bind', [MapsController::class, 'bind'])->name('maps.Bind');
-    Route::get('ascent', [MapsController::class, 'ascent'])->name('maps.Ascent');
+
+    Route::get('list/{mapname}', [MapsController::class, 'call'])->name('maps.list');
     Route::get('view/{id}', [MapsController::class, 'view'])->name('maps.view');
 });
 
-// login nya (for some reason ndak mau ngambil /login, nanti error, tapi anything yang bukan /login bisa)
-// NOTE: /login udah ada route bawaan starter codenya, jadi kita pake itu skrg
-//  Route::get('/memberlogin', function() {
-//      return view('auth/login');
-//  });
-
-
 // autentikasi, jangan disentuh
 Route::group(['middleware' => ['auth','verified']], function () {
+
     Route::get('/dashboard', function () {
         return view('home', ['users' => User::get(),]);
     });

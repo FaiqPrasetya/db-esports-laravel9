@@ -69,8 +69,19 @@ https://templatemo.com/tm-556-catalog-z
 
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
-            <h2 class="col-12 tm-text-primary">{{ $strats->strats_desc }}</h2>
+            <h2 class="col-12 tm-text-primary"></h2>
         </div>
+
+        <div class="row mb-4">
+            <h2 class="col-6 tm-text-primary">{{ $strats->strats_desc }}</h2>
+            <div class="col-6 d-flex justify-content-end align-items-center">
+                <a class="btn-primary" style="color: white" href="{{ url()->previous() }}">
+                    <i class="fas fa-arrow-left"></i>
+                    Back
+                </a>
+            </div>
+        </div>
+
         <div class="row tm-mb-90">
 
             <!-- Big image -->

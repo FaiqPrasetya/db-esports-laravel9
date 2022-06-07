@@ -88,11 +88,11 @@ https://templatemo.com/tm-556-catalog-z
             @foreach ($maps as $map)
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                     <figure class="effect-ming tm-video-item">
-                        <img src="{{ asset('assets/img/old/maps/' . $map->map_file ) }}" alt="Image" class="img-fluid">
+                        <img src="{{asset('assets/img/old/maps/' . $map->map_file)}}" alt="{{ $map->map_name}}" class="img-fluid">
                         <figcaption class="d-flex align-items-center justify-content-center">
                             {{-- Map name kedepannya pgn diganti pake fitur "Last updated on *tanggal*" --}}
                             <h2>{{ $map->map_name }}</h2>
-                            <a href="{{ route('maps.' . $map->map_name) }}" >View more</a>
+                            <a href="{{route('maps.list', $map->map_name)}}" >View more</a>
                         </figcaption>
                     </figure>
                     <div class="d-flex justify-content-between tm-text-gray">
