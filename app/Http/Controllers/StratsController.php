@@ -11,6 +11,15 @@ use Illuminate\Http\Request;
 
 class StratsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:strats.index')->only('index');
+        $this->middleware('permission:strats.create')->only('create', 'store');
+        $this->middleware('permission:strats.edit')->only('edit', 'update');
+        $this->middleware('permission:strats.destroy')->only('destroy');
+    }
+
     public function index(Request $request)
     {
         //ambil data

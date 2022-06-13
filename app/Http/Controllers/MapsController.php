@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class MapsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:maps.list')->only('call');
+        $this->middleware('permission:maps.view')->only('view');
+    }
+
     public function call($mapname) {
         $strats = DB::table('strats')
         ->where('map_name', $mapname)->paginate(25);

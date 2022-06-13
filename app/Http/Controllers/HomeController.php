@@ -7,7 +7,6 @@ use App\Models\Maps;
 
 class HomeController extends Controller
 {
-    //
     public function index() {
         $maps = Maps::all();
 
