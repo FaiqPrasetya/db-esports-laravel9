@@ -48,9 +48,9 @@
             <div class="first-content">
 
                 <!-- Hero Title -->
-                <h1>DUMMY PAGE</h1>
+                <h1>VOLA</h1>
                 <span>Super secret <em>Strats</em> Database</span><br>
-                <span>Bruh cari template buat halaman ini</span>
+                {{-- <span>Bruh cari template buat halaman ini</span> --}}
 
                 <!-- Button Discover More dan Login page -->
                 <div class="primary-button">
